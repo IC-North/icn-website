@@ -1,1 +1,335 @@
-<!doctype html><html><head><meta charset='utf-8'><title>ICN Website</title><link rel='stylesheet' href='styles.css'></head><body><h1>ICN-North Automotive</h1><p>Site werkt!</p><img src='assets/logo.png' alt='Logo'></body></html>
+<!doctype html>
+<html lang="nl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>IC-North Automotive</title>
+  <meta name="description" content="IC-North Automotive — Specialist in voertuigbeveiliging (SCM klasse 1 t/m 5), OEM & aftermarket, KIWA SCM-gecertificeerd." />
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    .lang-toggle { border: 1px solid #ddd; background:#fff; padding:.4rem .6rem; border-radius:.5rem; cursor:pointer; }
+    .lang-toggle[aria-pressed="true"] { font-weight:600; }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container brand">
+      <a class="logo" href="#home" aria-label="IC-North Automotive">
+        <img src="assets/logo.png" alt="IC-North Automotive logo" />
+      </a>
+      <button class="menu-toggle" aria-label="Menu openen" aria-expanded="false">☰</button>
+      <nav class="site-nav">
+        <a href="#home" data-i18n="nav.home">Home</a>
+        <a href="#diensten" data-i18n="nav.services">Diensten</a>
+        <a href="#merken" data-i18n="nav.brands">Merken</a>
+        <a href="#certificering" data-i18n="nav.cert">Certificering</a>
+        <a href="#reviews" data-i18n="nav.reviews">Reviews</a>
+        <a href="#herkeuring" data-i18n="nav.reinspection">Herkeuring</a>
+        <a href="#contact" data-i18n="nav.contact">Contact</a>
+      </nav>
+      <div>
+        <button id="lang-nl" class="lang-toggle" aria-pressed="true">NL</button>
+        <button id="lang-en" class="lang-toggle" aria-pressed="false">EN</button>
+      </div>
+    </div>
+  </header>
+
+  <main id="home">
+    <!-- HERO -->
+    <section class="hero hero-light">
+      <div class="container hero-stack">
+        <p class="tagline" data-i18n="hero.tagline">SCM voertuigbeveiliging • OEM & Aftermarket • KIWA SCM-gecertificeerd</p>
+        <p class="lead" data-i18n="hero.lead">Wij zijn gespecialiseerd in voertuigbeveiliging (klasse 1 t/m 5) voor premium merken als Mercedes, Audi, Porsche, SEAT, Volkswagen, Škoda en Volvo. Met focus op kwaliteit, klantgerichtheid en een professionele werkplaats.</p>
+        <div class="cta-row">
+          <a class="btn btn-primary" href="#contact" data-i18n="cta.contact">Contact</a>
+          <a class="btn btn-outline" href="#diensten" data-i18n="cta.viewServices">Bekijk diensten</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- USP's -->
+    <section class="section" id="usp">
+      <div class="container grid">
+        <div class="card">
+          <h3 data-i18n="usp.private.title">Particulier</h3>
+          <p data-i18n="usp.private.body">Veilig en verzekerd de weg op met een passend beveiligingsniveau voor uw auto. Wij adviseren conform de eisen van uw verzekeraar.</p>
+        </div>
+        <div class="card">
+          <h3 data-i18n="usp.business.title">Zakelijk</h3>
+          <p data-i18n="usp.business.body">Vlootbeheer, herkeuringen en OEM-oplossingen voor dealers en fleetowners. Afspraak = afspraak, met haal- en brengservice.</p>
+        </div>
+        <div class="card">
+          <h3 data-i18n="usp.workshop.title">Werkplaats & Service</h3>
+          <p data-i18n="usp.workshop.body">Professioneel uitgeruste werkplaats, ervaren inbouwspecialisten en nette afwerking. Snelle planning en duidelijke communicatie.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT (verborgen bij start) -->
+    <section id="contact" class="section" style="display:none;" aria-hidden="true">
+      <div class="container">
+        <h2 data-i18n="contact.title">Contact</h2>
+        <form id="contactForm" class="contact-form">
+
+          <label>
+            <span data-i18n="form.firstName">Voornaam</span>
+            <input type="text" name="first_name" required />
+          </label>
+
+          <label>
+            <span data-i18n="form.lastName">Achternaam</span>
+            <input type="text" name="last_name" required />
+          </label>
+
+          <label>
+            <span data-i18n="form.company">Bedrijfsnaam of particulier</span>
+            <input type="text" name="company" required />
+          </label>
+
+          <label>
+            <span data-i18n="form.plate">Kenteken</span>
+            <input type="text" name="license_plate" id="license_plate" required aria-describedby="plateHelp" />
+            <small id="plateHelp" class="form-hint" data-i18n="form.plateHelp">Wordt automatisch geformatteerd en opgezocht bij RDW.</small>
+            <div class="muted" id="platePreview" aria-live="polite"></div>
+          </label>
+
+          <div class="grid">
+            <label>
+              <span data-i18n="form.make">Merk</span>
+              <input type="text" name="rdw_merk" id="rdw_merk" placeholder="—" readonly />
+            </label>
+            <label>
+              <span data-i18n="form.model">Type / Handelsbenaming</span>
+              <input type="text" name="rdw_type" id="rdw_type" placeholder="—" readonly />
+            </label>
+            <label>
+              <span data-i18n="form.year">Bouwjaar</span>
+              <input type="text" name="rdw_bouwjaar" id="rdw_bouwjaar" placeholder="—" readonly />
+            </label>
+          </div>
+
+          <label>
+            <span data-i18n="form.vin">Chassisnummer (VIN)</span>
+            <input type="text" name="vin" minlength="17" maxlength="17" required />
+          </label>
+
+          <label>
+            <span data-i18n="form.phone">Telefoonnummer</span>
+            <input type="tel" name="phone" required />
+          </label>
+
+          <label>
+            <span data-i18n="form.email">E-mail</span>
+            <input type="email" name="email" required />
+          </label>
+
+          <label>
+            <span data-i18n="form.subject">Onderwerp</span>
+            <input type="text" name="subject" placeholder="Bijv. Offerte Klasse 4/5" />
+          </label>
+
+          <label>
+            <span data-i18n="form.message">Bericht</span>
+            <textarea name="message" rows="6" placeholder="Waar kunnen wij u mee helpen?" required></textarea>
+          </label>
+
+          <button type="submit" class="btn btn-primary" data-i18n="form.submit">Versturen</button>
+          <p class="form-hint">
+            <span data-i18n="form.mailUs">Liever direct mailen?</span>
+            <a href="mailto:icnorthautomotive@gmail.com">icnorthautomotive@gmail.com</a>
+          </p>
+          <p id="formMessage" class="form-message" role="status" aria-live="polite"></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <small>
+        © <span id="year"></span> IC-North Automotive. <span data-i18n="footer.made">Gemaakt met ♥.</span>
+        <span data-i18n="footer.mail">Mail:</span> <a href="mailto:icnorthautomotive@gmail.com">icnorthautomotive@gmail.com</a>
+      </small>
+    </div>
+  </footer>
+
+  <script>
+  // ---- RDW helpers ----
+  async function rdwLookup(rawInput) {
+    const cleaned = (rawInput || '').toUpperCase().replace(/[^A-Z0-9]/g, '');
+    if (!cleaned) return null;
+    const url = `https://opendata.rdw.nl/api/id/m9d7-ebf2.json?$select=merk,handelsbenaming,datum_eerste_toelating,kenteken&$where=kenteken='${cleaned}'`;
+    const res = await fetch(url, { headers: { 'Accept': 'application/json' } });
+    if (!res.ok) return null;
+    const data = await res.json();
+    if (!Array.isArray(data) || data.length === 0) return null;
+    const row = data[0];
+    const year = row.datum_eerste_toelating && String(row.datum_eerste_toelating).slice(0,4);
+    return { kentekenRaw: row.kenteken, merk: row.merk || '', type: row.handelsbenaming || '', bouwjaar: year || '' };
+  }
+
+  function formatDutchPlate(input) {
+    const s = (input || '').toUpperCase().replace(/[^A-Z0-9]/g, '');
+    const patterns = [
+      { re: /^([A-Z]{2})(\d{2})(\d{2})$/, fmt: '$1-$2-$3' },
+      { re: /^(\d{2})(\d{2})([A-Z]{2})$/, fmt: '$1-$2-$3' },
+      { re: /^(\d{2})([A-Z]{2})(\d{2})$/, fmt: '$1-$2-$3' },
+      { re: /^([A-Z]{2})(\d{2})([A-Z]{2})$/, fmt: '$1-$2-$3' },
+      { re: /^([A-Z]{2})([A-Z]{2})(\d{2})$/, fmt: '$1-$2-$3' },
+      { re: /^(\d{2})([A-Z]{2})([A-Z]{2})$/, fmt: '$1-$2-$3' },
+      { re: /^(\d{2})([A-Z]{3})(\d)$/, fmt: '$1-$2-$3' },
+      { re: /^(\d)([A-Z]{3})(\d{2})$/, fmt: '$1-$2-$3' },
+      { re: /^([A-Z]{2})(\d{3})([A-Z])$/, fmt: '$1-$2-$3' },
+      { re: /^([A-Z])(\d{3})([A-Z]{2})$/, fmt: '$1-$2-$3' },
+      { re: /^(\d{3})([A-Z]{2})([A-Z])$/, fmt: '$1-$2-$3' },
+      { re: /^([A-Z]{3})(\d{2})([A-Z])$/, fmt: '$1-$2-$3' },
+      { re: /^([A-Z])(\d{2})([A-Z]{3})$/, fmt: '$1-$2-$3' },
+      { re: /^([A-Z]{3})(\d)(\d{2})$/, fmt: '$1-$2-$3' },
+      { re: /^([A-Z]{2})(\d{3})([A-Z]{1})$/, fmt: '$1-$2-$3' },
+    ];
+    for (const p of patterns) { if (p.re.test(s)) return s.replace(p.re, p.fmt); }
+    return s;
+  }
+
+  // ---- i18n ----
+  const TRANSLATIONS = {
+    nl: {
+      'nav.home': 'Home', 'nav.services': 'Diensten', 'nav.brands': 'Merken', 'nav.cert': 'Certificering', 'nav.reviews': 'Reviews', 'nav.reinspection': 'Herkeuring', 'nav.contact': 'Contact',
+      'hero.tagline': 'SCM voertuigbeveiliging • OEM & Aftermarket • KIWA SCM-gecertificeerd',
+      'hero.lead': 'Wij zijn gespecialiseerd in voertuigbeveiliging (klasse 1 t/m 5) voor premium merken als Mercedes, Audi, Porsche, SEAT, Volkswagen, Škoda en Volvo. Met focus op kwaliteit, klantgerichtheid en een professionele werkplaats.',
+      'cta.contact': 'Contact', 'cta.viewServices': 'Bekijk diensten',
+      'usp.private.title': 'Particulier', 'usp.private.body': 'Veilig en verzekerd de weg op met een passend beveiligingsniveau voor uw auto. Wij adviseren conform de eisen van uw verzekeraar.',
+      'usp.business.title': 'Zakelijk', 'usp.business.body': 'Vlootbeheer, herkeuringen en OEM-oplossingen voor dealers en fleetowners. Afspraak = afspraak, met haal- en brengservice.',
+      'usp.workshop.title': 'Werkplaats & Service', 'usp.workshop.body': 'Professioneel uitgeruste werkplaats, ervaren inbouwspecialisten en nette afwerking. Snelle planning en duidelijke communicatie.',
+      'contact.title': 'Contact',
+      'form.firstName': 'Voornaam', 'form.lastName': 'Achternaam', 'form.company': 'Bedrijfsnaam of particulier', 'form.plate': 'Kenteken', 'form.plateHelp': 'Wordt automatisch geformatteerd en opgezocht bij RDW.', 'form.make': 'Merk', 'form.model': 'Type / Handelsbenaming', 'form.year': 'Bouwjaar', 'form.vin': 'Chassisnummer (VIN)', 'form.phone': 'Telefoonnummer', 'form.email': 'E-mail', 'form.subject': 'Onderwerp', 'form.message': 'Bericht', 'form.submit': 'Versturen', 'form.mailUs': 'Liever direct mailen?',
+      'footer.made': 'Gemaakt met ♥.', 'footer.mail': 'Mail:'
+    },
+    en: {
+      'nav.home': 'Home', 'nav.services': 'Services', 'nav.brands': 'Brands', 'nav.cert': 'Certification', 'nav.reviews': 'Reviews', 'nav.reinspection': 'Reinspection', 'nav.contact': 'Contact',
+      'hero.tagline': 'SCM vehicle security • OEM & Aftermarket • KIWA SCM certified',
+      'hero.lead': 'We specialise in vehicle security (class 1–5) for premium brands such as Mercedes, Audi, Porsche, SEAT, Volkswagen, Škoda and Volvo. We focus on quality, customer service and a professional workshop.',
+      'cta.contact': 'Contact', 'cta.viewServices': 'View services',
+      'usp.private.title': 'Private', 'usp.private.body': 'Drive safely and insured with the right security level for your car. We advise according to your insurer’s requirements.',
+      'usp.business.title': 'Business', 'usp.business.body': 'Fleet management, reinspections and OEM solutions for dealers and fleet owners. Reliable scheduling with pick-up and drop-off service.',
+      'usp.workshop.title': 'Workshop & Service', 'usp.workshop.body': 'Professionally equipped workshop, experienced installers and neat finishing. Fast planning and clear communication.',
+      'contact.title': 'Contact',
+      'form.firstName': 'First name', 'form.lastName': 'Last name', 'form.company': 'Company or private', 'form.plate': 'License plate', 'form.plateHelp': 'Will be auto-formatted and looked up via RDW.', 'form.make': 'Make', 'form.model': 'Model / Trade name', 'form.year': 'Year', 'form.vin': 'Chassis number (VIN)', 'form.phone': 'Phone number', 'form.email': 'Email', 'form.subject': 'Subject', 'form.message': 'Message', 'form.submit': 'Send', 'form.mailUs': 'Prefer email?' ,
+      'footer.made': 'Made with ♥.', 'footer.mail': 'Mail:'
+    }
+  };
+
+  function setLanguage(lang) {
+    const dict = TRANSLATIONS[lang] || TRANSLATIONS.nl;
+    document.documentElement.lang = lang;
+    document.querySelectorAll('[data-i18n]').forEach(el => {
+      const key = el.getAttribute('data-i18n');
+      if (dict[key]) el.textContent = dict[key];
+    });
+    // Toggle knop-states
+    const enBtn = document.getElementById('lang-en');
+    const nlBtn = document.getElementById('lang-nl');
+    if (enBtn && nlBtn) {
+      enBtn.setAttribute('aria-pressed', lang === 'en');
+      nlBtn.setAttribute('aria-pressed', lang === 'nl');
+    }
+    localStorage.setItem('site-lang', lang);
+  }
+
+  // ---- UI init ----
+  document.addEventListener('DOMContentLoaded', () => {
+    const y = document.getElementById('year');
+    if (y) y.textContent = new Date().getFullYear();
+
+    // Taal init
+    const saved = localStorage.getItem('site-lang') || 'nl';
+    setLanguage(saved);
+    document.getElementById('lang-en')?.addEventListener('click', () => setLanguage('en'));
+    document.getElementById('lang-nl')?.addEventListener('click', () => setLanguage('nl'));
+
+    // Contact zichtbaar maken op klik
+    const contactSection = document.getElementById('contact');
+    function showContact() {
+      if (!contactSection) return;
+      contactSection.style.display = 'block';
+      contactSection.setAttribute('aria-hidden', 'false');
+      contactSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+    document.querySelectorAll('a[href="#contact"]').forEach(a => {
+      a.addEventListener('click', (e) => { e.preventDefault(); showContact(); try { history.replaceState(null, '', '#contact'); } catch {} });
+    });
+    if (location.hash === '#contact') { showContact(); }
+
+    // Form logica
+    const form = document.getElementById('contactForm');
+    const msg = document.getElementById('formMessage');
+    const plateEl = document.getElementById('license_plate');
+    const platePreview = document.getElementById('platePreview');
+    const merkEl = document.getElementById('rdw_merk');
+    const typeEl = document.getElementById('rdw_type');
+    const bouwjaarEl = document.getElementById('rdw_bouwjaar');
+
+    async function handlePlateChange() {
+      const val = plateEl.value;
+      const formatted = formatDutchPlate(val);
+      if (formatted) plateEl.value = formatted;
+      if (platePreview) platePreview.textContent = formatted ? `${saved === 'en' ? 'Plate:' : 'Kenteken:'} ${formatted}` : '';
+
+      try {
+        const info = await rdwLookup(val);
+        if (info) {
+          const pretty = formatDutchPlate(info.kentekenRaw);
+          if (pretty) plateEl.value = pretty;
+          if (platePreview) platePreview.textContent = `${(localStorage.getItem('site-lang')||'nl') === 'en' ? 'Plate:' : 'Kenteken:'} ${pretty}`;
+          if (merkEl) merkEl.value = info.merk;
+          if (typeEl) typeEl.value = info.type;
+          if (bouwjaarEl) bouwjaarEl.value = info.bouwjaar;
+        } else {
+          if (merkEl) merkEl.value = '';
+          if (typeEl) typeEl.value = '';
+          if (bouwjaarEl) bouwjaarEl.value = '';
+        }
+      } catch (e) {
+        if (merkEl) merkEl.value = '';
+        if (typeEl) typeEl.value = '';
+        if (bouwjaarEl) bouwjaarEl.value = '';
+      }
+    }
+
+    if (plateEl) {
+      plateEl.addEventListener('blur', handlePlateChange);
+      plateEl.addEventListener('input', () => {
+        const formatted = formatDutchPlate(plateEl.value);
+        const lang = localStorage.getItem('site-lang') || 'nl';
+        if (platePreview) platePreview.textContent = formatted ? `${lang === 'en' ? 'Plate:' : 'Kenteken:'} ${formatted}` : '';
+      });
+    }
+
+    if (form) {
+      form.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        msg.textContent = (localStorage.getItem('site-lang')||'nl') === 'en' ? 'Sending…' : 'Versturen...';
+        const formData = Object.fromEntries(new FormData(form));
+        try {
+          const res = await fetch('/api/contact', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(formData) });
+          const data = await res.json();
+          if (res.ok && data.ok) {
+            msg.textContent = (localStorage.getItem('site-lang')||'nl') === 'en' ? 'Thanks! Your message was sent.' : 'Bedankt! Je bericht is verstuurd.';
+            form.reset();
+            platePreview.textContent = '';
+            merkEl.value = '';
+            typeEl.value = '';
+            bouwjaarEl.value = '';
+          } else {
+            const errors = (data.errors || [data.error || ((localStorage.getItem('site-lang')||'nl') === 'en' ? 'Unknown error' : 'Onbekende fout')]).join(' • ');
+            msg.textContent = ((localStorage.getItem('site-lang')||'nl') === 'en' ? 'Cannot send: ' : 'Kan niet verzenden: ') + errors;
+          }
+        } catch (err) {
+          msg.textContent = (localStorage.getItem('site-lang')||'nl') === 'en' ? 'Connection failed. Please try again later.' : 'Verbinding mislukt. Probeer het later opnieuw.';
+        }
+      });
+    }
+  });
+  </script>
+</body>
+</html>
