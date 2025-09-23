@@ -24,7 +24,7 @@
         <a href="#merken" data-i18n="nav.brands">Merken</a>
         <a href="#certificering" data-i18n="nav.cert">Certificering</a>
         <a href="#reviews" data-i18n="nav.reviews">Reviews</a>
-        <a href="#herkeuring" data-i18n="nav.reinspection">Herkeuring</a>
+        <a class="btn btn-outline" href="https://www.kiwa.com/nl/nl/markten/automotive-en-luchtvaart/voertuigbeveiliging/kentekencheck/" target="_blank" rel="noopener" data-i18n="nav.reinspection">Herkeuring</a>
         <a href="#contact" data-i18n="nav.contact">Contact</a>
       </nav>
       <div>
@@ -66,7 +66,7 @@
     </section>
 
     <!-- CONTACT (verborgen bij start) -->
-    <section id="contact" class="section" style="display:none;" aria-hidden="true">
+<section id="contact" class="section" style="display:none;" aria-hidden="true">
       <div class="container">
         <h2 data-i18n="contact.title">Contact</h2>
         <form id="contactForm" class="contact-form">
@@ -194,18 +194,24 @@
   // ---- i18n ----
   const TRANSLATIONS = {
     nl: {
-      'nav.home': 'Home', 'nav.services': 'Diensten', 'nav.brands': 'Merken', 'nav.cert': 'Certificering', 'nav.reviews': 'Reviews', 'nav.reinspection': 'Herkeuring', 'nav.contact': 'Contact',
-      'hero.tagline': 'SCM voertuigbeveiliging • OEM & Aftermarket • KIWA SCM-gecertificeerd',
-      'hero.lead': 'Wij zijn gespecialiseerd in voertuigbeveiliging (klasse 1 t/m 5) voor premium merken als Mercedes, Audi, Porsche, SEAT, Volkswagen, Škoda en Volvo. Met focus op kwaliteit, klantgerichtheid en een professionele werkplaats.',
-      'cta.contact': 'Contact', 'cta.viewServices': 'Bekijk diensten',
-      'usp.private.title': 'Particulier', 'usp.private.body': 'Veilig en verzekerd de weg op met een passend beveiligingsniveau voor uw auto. Wij adviseren conform de eisen van uw verzekeraar.',
-      'usp.business.title': 'Zakelijk', 'usp.business.body': 'Vlootbeheer, herkeuringen en OEM-oplossingen voor dealers en fleetowners. Afspraak = afspraak, met haal- en brengservice.',
-      'usp.workshop.title': 'Werkplaats & Service', 'usp.workshop.body': 'Professioneel uitgeruste werkplaats, ervaren inbouwspecialisten en nette afwerking. Snelle planning en duidelijke communicatie.',
-      'contact.title': 'Contact',
-      'form.firstName': 'Voornaam', 'form.lastName': 'Achternaam', 'form.company': 'Bedrijfsnaam of particulier', 'form.plate': 'Kenteken', 'form.plateHelp': 'Wordt automatisch geformatteerd en opgezocht bij RDW.', 'form.make': 'Merk', 'form.model': 'Type / Handelsbenaming', 'form.year': 'Bouwjaar', 'form.vin': 'Chassisnummer (VIN)', 'form.phone': 'Telefoonnummer', 'form.email': 'E-mail', 'form.subject': 'Onderwerp', 'form.message': 'Bericht', 'form.submit': 'Versturen', 'form.mailUs': 'Liever direct mailen?',
+      'nav.home': 'Home', 'nav.services': 'Diensten', 'nav.brands': 'Merken', 'nav.cert': 'Certificering', 'nav.reviews': 'Reviews', 'nav.reinspection': 'Herkeuring (Kiwa)', 'nav.contact': 'Contact',
+      'hero.tagline': 'IC‑North Automotive',
+      'hero.lead': 'Specialist in voertuigbeveiliging (SCM klasse 1–5), inbouw en certificering — voor particulier en zakelijk.',
+      'cta.contact': 'Offerte of afspraak', 'cta.viewServices': 'Diensten bekijken',
+      'usp.private.title': 'Particulier', 'usp.private.body': 'Beveiliging op maat voor jouw auto: alarm, startonderbreker, voertuigvolgsysteem (klasse 1–5) en montage volgens fabrieksspecificaties.',
+      'usp.business.title': 'Zakelijk', 'usp.business.body': 'Vlootbeheer, certificaten en herkeuringen centraal geregeld. Snelle planning, vaste prijzen en haal‑ en brengservice.',
+      'usp.workshop.title': 'Kwaliteit & certificering', 'usp.workshop.body': 'Gecertificeerde inbouw, testrapporten en afgifte van SCM‑certificaat. Heldere documentatie voor verzekeraars.',
+      'contact.title': 'Plan je inbouw of herkeuring',
+      'form.firstName': 'Voornaam', 'form.lastName': 'Achternaam', 'form.company': 'Bedrijf (optioneel)', 'form.plate': 'Kenteken', 'form.plateHelp': 'Voor snelle controle van certificaten en componenten.', 'form.make': 'Merk', 'form.model': 'Model', 'form.year': 'Bouwjaar', 'form.vin': 'Chassisnummer (VIN)', 'form.phone': 'Telefoon', 'form.email': 'E‑mail', 'form.subject': 'Onderwerp', 'form.message': 'Bericht', 'form.submit': 'Versturen', 'form.mailUs': 'Mail ons',
       'footer.made': 'Gemaakt met ♥.', 'footer.mail': 'Mail:'
+      'reinspection.title': 'Herkeuring',
+      'reinspection.body': 'Check direct via Kiwa welke certificaten actief zijn, wanneer ze verlopen of al zijn verlopen.',
+      'reinspection.cta': 'Naar Kiwa kentekencheck',
     },
     en: {
+      'reinspection.cta': 'Go to KIWA plate check',
+      'reinspection.body': 'A license-plate check via KIWA is required for reinspection. Use the button below to go directly to the KIWA plate check.',
+      'reinspection.title': 'Reinspection',
       'nav.home': 'Home', 'nav.services': 'Services', 'nav.brands': 'Brands', 'nav.cert': 'Certification', 'nav.reviews': 'Reviews', 'nav.reinspection': 'Reinspection', 'nav.contact': 'Contact',
       'hero.tagline': 'SCM vehicle security • OEM & Aftermarket • KIWA SCM certified',
       'hero.lead': 'We specialise in vehicle security (class 1–5) for premium brands such as Mercedes, Audi, Porsche, SEAT, Volkswagen, Škoda and Volvo. We focus on quality, customer service and a professional workshop.',
