@@ -1,0 +1,56 @@
+
+/* --- Enhancements for homepage structure --- */
+.site-header { position: sticky; top: 0; backdrop-filter: blur(6px); background: rgba(255,255,255,.85); border-bottom: 1px solid #eee; z-index: 100; }
+.header-inner { display:flex; align-items:center; justify-content:space-between; padding: .75rem 0; }
+.brand-logo { display:block; height:42px; width:auto; image-rendering:auto; }
+
+.nav a { margin-left:1rem; text-decoration:none; color:#111; font-weight:500; }
+.nav .btn { margin-left:1rem; }
+
+.hero { padding: 4rem 0 2.5rem; background: linear-gradient(180deg, #f9fafb 0%, #fff 60%); }
+.hero-inner { display:grid; grid-template-columns: 1.2fr 1fr; gap:2rem; align-items:center; }
+.hero-copy h1 { font-size: clamp(2rem, 2.6vw, 3rem); margin:0 0 .5rem; }
+.hero-copy p { font-size: 1.1rem; color:#444; }
+.hero-cta { display:flex; gap:.75rem; margin: 1rem 0 1rem; }
+.hero-points { display:grid; grid-auto-flow:row; gap:.25rem; padding-left:1rem; color:#333; }
+
+.card { background:#fff; border:1px solid #eee; border-radius:1rem; padding:1rem 1.25rem; box-shadow: 0 8px 24px rgba(0,0,0,.05); }
+.card h3 { margin-top:0; }
+
+.feature-slab { padding: 3rem 0; background:#fff; }
+.feature-slab .lead { color:#444; }
+.feature-grid { display:grid; grid-template-columns: repeat(3, 1fr); gap:1rem; margin-top:1rem; }
+.feature h3 { margin:.5rem 0; }
+
+.services { padding: 3rem 0; background:#f8fafc; }
+.services-grid { display:grid; grid-template-columns: repeat(4, 1fr); gap:1rem; margin-top:1rem; }
+.service { background:#fff; border:1px solid #eee; border-radius:1rem; padding:1rem; box-shadow: 0 8px 20px rgba(0,0,0,.04); }
+.service h3 { margin:.25rem 0 .5rem; font-size:1.05rem; }
+
+.brands { padding: 2.5rem 0; background:#fff; }
+.brand-row { display:grid; grid-template-columns: repeat(5, minmax(0,1fr)); align-items:center; gap:1.25rem; opacity:.85; }
+.brand-row img { max-height:28px; width:auto; justify-self:center; }
+
+.cta { padding: 3rem 0; background: linear-gradient(180deg, #111 0%, #222 100%); color:#fff; text-align:center; }
+.cta .btn { margin-top:.75rem; }
+
+.site-footer { padding:1.25rem 0; border-top: 1px solid #eee; background:#fff; }
+.footer-inner { display:flex; align-items:center; justify-content:space-between; }
+
+/* Utilities */
+.container { max-width: 1140px; margin: 0 auto; padding: 0 1rem; }
+.btn { display:inline-block; padding:.6rem .9rem; border-radius:.75rem; border:1px solid #111; }
+.btn-primary { background:#111; color:#fff; }
+.btn-ghost { background:#fff; color:#111; }
+@media (max-width: 960px) { .hero-inner{ grid-template-columns: 1fr; } .feature-grid{ grid-template-columns: 1fr; } .services-grid{ grid-template-columns: 1fr 1fr; } .brand-row{ grid-template-columns: repeat(3,1fr);} }
+@media (max-width: 640px) { .services-grid{ grid-template-columns: 1fr; } .brand-row{ grid-template-columns: repeat(2,1fr);} }
+
+
+/* OEM section */
+.oem { padding: 3rem 0; background:#fff; }
+.oem .oem-grid { display:grid; grid-template-columns: repeat(4,1fr); gap:1rem; margin-top:1rem; }
+.oem-item { background:#fff; border:1px solid #eee; border-radius:1rem; padding:1rem; box-shadow: 0 8px 20px rgba(0,0,0,.04); }
+.oem-explain { margin-top:1rem; }
+.oem-note { margin-top:1rem; padding: .75rem 1rem; background:#f1f5f9; border-radius:.75rem; border:1px solid #e5e7eb; }
+@media (max-width: 1024px){ .oem .oem-grid{ grid-template-columns: repeat(2,1fr);} }
+@media (max-width: 640px){ .oem .oem-grid{ grid-template-columns: 1fr;} }
