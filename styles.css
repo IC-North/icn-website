@@ -118,16 +118,3 @@ body {
   .site-nav.open { display: flex; }
   .logo img { width: 138px; }
 }
-
-
-
-/* Minimal home layout (no color changes) */
-.hero-min { padding: 2.5rem 0; }
-.hero-min h1 { margin: 0 0 .25rem; line-height: 1.2; }
-.hero-min .lead { margin: 0 0 1rem; }
-.btn-row { display: flex; flex-wrap: wrap; gap: .5rem; }
-.btn { display:inline-block; padding:.55rem .9rem; border-radius:.5rem; border:1px solid currentColor; text-decoration:none; }
-.container { max-width: 1140px; margin: 0 auto; padding: 0 1rem; }
-.one-line { padding: 1.25rem 0; border-top: 1px solid rgba(0,0,0,.08); }
-.one-line h2 { margin: 0 0 .25rem; font-size: 1.1rem; }
-@media (max-width: 640px){ .btn-row { gap: .45rem; } .btn { padding:.5rem .8rem; } }

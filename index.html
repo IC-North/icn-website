@@ -15,7 +15,7 @@
   <header class="site-header">
     <div class="container brand">
       <a class="logo" href="#home" aria-label="IC-North Automotive">
-        <img src="assets/logo.png" alt="IC-North Automotive logo" / srcset="assets/logo.png 140w, assets/logo@2x.png 280w, assets/logo@3x.png 420w, assets/logo@4x.png 560w" sizes="(max-width: 640px) 140px, 180px" height="42">
+        <img src="assets/logo.png" alt="IC-North Automotive logo" />
       </a>
       <button class="menu-toggle" aria-label="Menu openen" aria-expanded="false">☰</button>
       <nav class="site-nav">
@@ -34,32 +34,115 @@
     </div>
   </header>
 
-  
-<main>
-  <section class="hero-min">
-    <div class="container">
-      <h1>OEM & high‑end aftermarket voor automotive elektronica</h1>
-      <p class="lead">Levering • Installatie • Programmatie — strak, betrouwbaar en fabriekwaardig.</p>
-      <div class="btn-row">
-        <a class="btn" href="#oem">OEM-oplossingen</a>
-        <a class="btn" href="#alarmsystemen">Alarmsystemen</a>
-        <a class="btn" href="#parkeersensoren">Parkeersensoren</a>
-        <a class="btn" href="#camerasystemen">Camerasystemen</a>
-        <a class="btn" href="#cruisecontrol">Cruisecontrol</a>
-        <a class="btn" href="#sfd2">SFD2-vrijschakeling</a>
+  <main id="home">
+    <!-- HERO -->
+    <section class="hero hero-light">
+      <div class="container hero-stack">
+        <p class="tagline" data-i18n="hero.tagline">SCM voertuigbeveiliging • OEM & Aftermarket • KIWA SCM-gecertificeerd</p>
+        <p class="lead" data-i18n="hero.lead">Wij zijn gespecialiseerd in voertuigbeveiliging (klasse 1 t/m 5) voor premium merken als Mercedes, Audi, Porsche, SEAT, Volkswagen, Škoda en Volvo. Met focus op kwaliteit, klantgerichtheid en een professionele werkplaats.</p>
+        <div class="cta-row">
+          <a class="btn btn-primary" href="#contact" data-i18n="cta.contact">Contact</a>
+          <a class="btn btn-outline" href="#diensten" data-i18n="cta.viewServices">Bekijk diensten</a>
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Korte placeholders per dienst; 1-liners zodat de pagina clean blijft -->
-  <section id="oem" class="one-line"><div class="container"><h2>OEM-oplossingen</h2><p>Voor Mercedes, Porsche, Audi, Volkswagen, SEAT, Škoda, CUPRA en Volvo.</p></div></section>
-  <section id="alarmsystemen" class="one-line"><div class="container"><h2>Alarmsystemen</h2><p>Gecertificeerde systemen, correct geprogrammeerd en netjes ingebouwd.</p></div></section>
-  <section id="parkeersensoren" class="one-line"><div class="container"><h2>Parkeersensoren</h2><p>Naadloze integratie en fabriekswaardige afwerking.</p></div></section>
-  <section id="camerasystemen" class="one-line"><div class="container"><h2>Camerasystemen</h2><p>Achteruitrij, 360° en dashcams — strak geïntegreerd.</p></div></section>
-  <section id="cruisecontrol" class="one-line"><div class="container"><h2>Cruisecontrol</h2><p>Originele bediening en correcte calibratie.</p></div></section>
-  <section id="sfd2" class="one-line"><div class="container"><h2>SFD2-vrijschakeling</h2><p>Vrijschakelen & coderen van VAG-modules met rapportage.</p></div></section>
-</main>
+    <!-- USP's -->
+    <section class="section" id="usp">
+      <div class="container grid">
+        <div class="card">
+          <h3 data-i18n="usp.private.title">Particulier</h3>
+          <p data-i18n="usp.private.body">Veilig en verzekerd de weg op met een passend beveiligingsniveau voor uw auto. Wij adviseren conform de eisen van uw verzekeraar.</p>
+        </div>
+        <div class="card">
+          <h3 data-i18n="usp.business.title">Zakelijk</h3>
+          <p data-i18n="usp.business.body">Vlootbeheer, herkeuringen en OEM-oplossingen voor dealers en fleetowners. Afspraak = afspraak, met haal- en brengservice.</p>
+        </div>
+        <div class="card">
+          <h3 data-i18n="usp.workshop.title">Werkplaats & Service</h3>
+          <p data-i18n="usp.workshop.body">Professioneel uitgeruste werkplaats, ervaren inbouwspecialisten en nette afwerking. Snelle planning en duidelijke communicatie.</p>
+        </div>
+      </div>
+    </section>
 
+    <!-- CONTACT (verborgen bij start) -->
+    <section id="contact" class="section" style="display:none;" aria-hidden="true">
+      <div class="container">
+        <h2 data-i18n="contact.title">Contact</h2>
+        <form id="contactForm" class="contact-form">
+
+          <label>
+            <span data-i18n="form.firstName">Voornaam</span>
+            <input type="text" name="first_name" required />
+          </label>
+
+          <label>
+            <span data-i18n="form.lastName">Achternaam</span>
+            <input type="text" name="last_name" required />
+          </label>
+
+          <label>
+            <span data-i18n="form.company">Bedrijfsnaam of particulier</span>
+            <input type="text" name="company" required />
+          </label>
+
+          <label>
+            <span data-i18n="form.plate">Kenteken</span>
+            <input type="text" name="license_plate" id="license_plate" required aria-describedby="plateHelp" />
+            <small id="plateHelp" class="form-hint" data-i18n="form.plateHelp">Wordt automatisch geformatteerd en opgezocht bij RDW.</small>
+            <div class="muted" id="platePreview" aria-live="polite"></div>
+          </label>
+
+          <div class="grid">
+            <label>
+              <span data-i18n="form.make">Merk</span>
+              <input type="text" name="rdw_merk" id="rdw_merk" placeholder="—" readonly />
+            </label>
+            <label>
+              <span data-i18n="form.model">Type / Handelsbenaming</span>
+              <input type="text" name="rdw_type" id="rdw_type" placeholder="—" readonly />
+            </label>
+            <label>
+              <span data-i18n="form.year">Bouwjaar</span>
+              <input type="text" name="rdw_bouwjaar" id="rdw_bouwjaar" placeholder="—" readonly />
+            </label>
+          </div>
+
+          <label>
+            <span data-i18n="form.vin">Chassisnummer (VIN)</span>
+            <input type="text" name="vin" minlength="17" maxlength="17" required />
+          </label>
+
+          <label>
+            <span data-i18n="form.phone">Telefoonnummer</span>
+            <input type="tel" name="phone" required />
+          </label>
+
+          <label>
+            <span data-i18n="form.email">E-mail</span>
+            <input type="email" name="email" required />
+          </label>
+
+          <label>
+            <span data-i18n="form.subject">Onderwerp</span>
+            <input type="text" name="subject" placeholder="Bijv. Offerte Klasse 4/5" />
+          </label>
+
+          <label>
+            <span data-i18n="form.message">Bericht</span>
+            <textarea name="message" rows="6" placeholder="Waar kunnen wij u mee helpen?" required></textarea>
+          </label>
+
+          <button type="submit" class="btn btn-primary" data-i18n="form.submit">Versturen</button>
+          <p class="form-hint">
+            <span data-i18n="form.mailUs">Liever direct mailen?</span>
+            <a href="mailto:icnorthautomotive@gmail.com">icnorthautomotive@gmail.com</a>
+          </p>
+          <p id="formMessage" class="form-message" role="status" aria-live="polite"></p>
+        </form>
+      </div>
+    </section>
+  </main>
 
   <footer class="site-footer">
     <div class="container">
